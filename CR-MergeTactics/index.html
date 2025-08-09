@@ -1,0 +1,759 @@
+<html>
+    <head>
+        <style>
+            .cardImage{
+                width: 96px;
+            }
+            .traitImage{
+                width: 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Clash Royale Merge Tactics Deck Generator</h1>
+        
+        <div id="inputDiv">
+            <div>
+                Number of cards in deck:
+                <input id="numCards" type="number" min="1" max="7" value="6">
+            </div>
+            
+            <div>
+                <span>
+                    Number of traits:
+                    <input id="numTraits" type="number" min="0" max="5" value="0">
+                </span>
+                <span>
+                    Select traits:
+                    <select name="trait1" id="trait1">
+                        <option value="none" selected>Select a trait</option>
+                        <option value="ace">Ace</option>
+                        <option value="assassin">Assassin</option>
+                        <option value="avenger">Avenger</option>
+                        <option value="brawler">Brawler</option>
+                        <option value="clan">Clan</option>
+                        <option value="goblin">Goblin</option>
+                        <option value="juggernaut">Juggernaut</option>
+                        <option value="noble">Noble</option>
+                        <option value="ranger">Ranger</option>
+                        <option value="thrower">Thrower</option>
+                        <option value="undead">Undead</option>
+                    </select>
+                    <select name="trait2" id="trait2">
+                        <option value="none" selected>Select a trait</option>
+                        <option value="ace">Ace</option>
+                        <option value="assassin">Assassin</option>
+                        <option value="avenger">Avenger</option>
+                        <option value="brawler">Brawler</option>
+                        <option value="clan">Clan</option>
+                        <option value="goblin">Goblin</option>
+                        <option value="juggernaut">Juggernaut</option>
+                        <option value="noble">Noble</option>
+                        <option value="ranger">Ranger</option>
+                        <option value="thrower">Thrower</option>
+                        <option value="undead">Undead</option>
+                    </select>
+                    <select name="trait3" id="trait3">
+                        <option value="none" selected>Select a trait</option>
+                        <option value="ace">Ace</option>
+                        <option value="assassin">Assassin</option>
+                        <option value="avenger">Avenger</option>
+                        <option value="brawler">Brawler</option>
+                        <option value="clan">Clan</option>
+                        <option value="goblin">Goblin</option>
+                        <option value="juggernaut">Juggernaut</option>
+                        <option value="noble">Noble</option>
+                        <option value="ranger">Ranger</option>
+                        <option value="thrower">Thrower</option>
+                        <option value="undead">Undead</option>
+                    </select>
+                    <select name="trait4" id="trait4">
+                        <option value="none" selected>Select a trait</option>
+                        <option value="ace">Ace</option>
+                        <option value="assassin">Assassin</option>
+                        <option value="avenger">Avenger</option>
+                        <option value="brawler">Brawler</option>
+                        <option value="clan">Clan</option>
+                        <option value="goblin">Goblin</option>
+                        <option value="juggernaut">Juggernaut</option>
+                        <option value="noble">Noble</option>
+                        <option value="ranger">Ranger</option>
+                        <option value="thrower">Thrower</option>
+                        <option value="undead">Undead</option>
+                    </select>
+                    <select name="trait5" id="trait5">
+                        <option value="none" selected>Select a trait</option>
+                        <option value="ace">Ace</option>
+                        <option value="assassin">Assassin</option>
+                        <option value="avenger">Avenger</option>
+                        <option value="brawler">Brawler</option>
+                        <option value="clan">Clan</option>
+                        <option value="goblin">Goblin</option>
+                        <option value="juggernaut">Juggernaut</option>
+                        <option value="noble">Noble</option>
+                        <option value="ranger">Ranger</option>
+                        <option value="thrower">Thrower</option>
+                        <option value="undead">Undead</option>
+                    </select>
+                </span>
+            </div>
+
+            <div>
+                <span>
+                    Number of maxed out traits:
+                    <input id="numLevel2Traits" type="number" min="0" max="2" value="0">
+                </span>
+                <span>
+                    Select maxed out traits:
+                    <select name="maxTrait1" id="maxTrait1">
+                    <option value="none" selected>Select a trait</option>
+                    <option value="ace">Ace</option>
+                    <option value="assassin">Assassin</option>
+                    <option value="avenger">Avenger</option>
+                    <option value="brawler">Brawler</option>
+                    <option value="clan">Clan</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="juggernaut">Juggernaut</option>
+                    <option value="noble">Noble</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="thrower">Thrower</option>
+                    <option value="undead">Undead</option>
+                </select>
+                    <select name="maxTrait2" id="maxTrait2">
+                    <option value="none" selected>Select a trait</option>
+                    <option value="ace">Ace</option>
+                    <option value="assassin">Assassin</option>
+                    <option value="avenger">Avenger</option>
+                    <option value="brawler">Brawler</option>
+                    <option value="clan">Clan</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="juggernaut">Juggernaut</option>
+                    <option value="noble">Noble</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="thrower">Thrower</option>
+                    <option value="undead">Undead</option>
+                </select>
+                </span>
+            </div>
+            
+            <div>
+                Select cards to include in decks:
+                <select name="card1" id="card1">
+                    <option value="none" selected>Select a card</option>
+                    <option value="archer queen">Archer Queen</option>
+                    <option value="archer">Archer</option>
+                    <option value="bandit">Bandit</option>
+                    <option value="barbarian">Barbarian</option>
+                    <option value="bomber">Bomber</option>
+                    <option value="dart goblin">Dart Goblin</option>
+                    <option value="executioner">Executioner</option>
+                    <option value="giant skeleton">Giant Skeleton</option>
+                    <option value="goblin machine">Goblin Machine</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="golden knight">Golden Knight</option>
+                    <option value="knight">Knight</option>
+                    <option value="mega knight">Mega Knight</option>
+                    <option value="pekka">P.E.K.K.A.</option>
+                    <option value="prince">Prince</option>
+                    <option value="princess">Princess</option>
+                    <option value="royal ghost">Royal Ghost</option>
+                    <option value="skeleton king">Skeleton King</option>
+                    <option value="spear goblin">Spear Goblin</option>
+                    <option value="valkyrie">Valkyrie</option>
+                </select>
+                <select name="card2" id="card2">
+                    <option value="none" selected>Select a card</option>
+                    <option value="archer queen">Archer Queen</option>
+                    <option value="archer">Archer</option>
+                    <option value="bandit">Bandit</option>
+                    <option value="barbarian">Barbarian</option>
+                    <option value="bomber">Bomber</option>
+                    <option value="dart goblin">Dart Goblin</option>
+                    <option value="executioner">Executioner</option>
+                    <option value="giant skeleton">Giant Skeleton</option>
+                    <option value="goblin machine">Goblin Machine</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="golden knight">Golden Knight</option>
+                    <option value="knight">Knight</option>
+                    <option value="mega knight">Mega Knight</option>
+                    <option value="pekka">P.E.K.K.A.</option>
+                    <option value="prince">Prince</option>
+                    <option value="princess">Princess</option>
+                    <option value="royal ghost">Royal Ghost</option>
+                    <option value="skeleton king">Skeleton King</option>
+                    <option value="spear goblin">Spear Goblin</option>
+                    <option value="valkyrie">Valkyrie</option>
+                </select>
+                <select name="card3" id="card3">
+                    <option value="none" selected>Select a card</option>
+                    <option value="archer queen">Archer Queen</option>
+                    <option value="archer">Archer</option>
+                    <option value="bandit">Bandit</option>
+                    <option value="barbarian">Barbarian</option>
+                    <option value="bomber">Bomber</option>
+                    <option value="dart goblin">Dart Goblin</option>
+                    <option value="executioner">Executioner</option>
+                    <option value="giant skeleton">Giant Skeleton</option>
+                    <option value="goblin machine">Goblin Machine</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="golden knight">Golden Knight</option>
+                    <option value="knight">Knight</option>
+                    <option value="mega knight">Mega Knight</option>
+                    <option value="pekka">P.E.K.K.A.</option>
+                    <option value="prince">Prince</option>
+                    <option value="princess">Princess</option>
+                    <option value="royal ghost">Royal Ghost</option>
+                    <option value="skeleton king">Skeleton King</option>
+                    <option value="spear goblin">Spear Goblin</option>
+                    <option value="valkyrie">Valkyrie</option>
+                </select>
+                <select name="card4" id="card4">
+                    <option value="none" selected>Select a card</option>
+                    <option value="archer queen">Archer Queen</option>
+                    <option value="archer">Archer</option>
+                    <option value="bandit">Bandit</option>
+                    <option value="barbarian">Barbarian</option>
+                    <option value="bomber">Bomber</option>
+                    <option value="dart goblin">Dart Goblin</option>
+                    <option value="executioner">Executioner</option>
+                    <option value="giant skeleton">Giant Skeleton</option>
+                    <option value="goblin machine">Goblin Machine</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="golden knight">Golden Knight</option>
+                    <option value="knight">Knight</option>
+                    <option value="mega knight">Mega Knight</option>
+                    <option value="pekka">P.E.K.K.A.</option>
+                    <option value="prince">Prince</option>
+                    <option value="princess">Princess</option>
+                    <option value="royal ghost">Royal Ghost</option>
+                    <option value="skeleton king">Skeleton King</option>
+                    <option value="spear goblin">Spear Goblin</option>
+                    <option value="valkyrie">Valkyrie</option>
+                </select>
+                <select name="card5" id="card5">
+                    <option value="none" selected>Select a card</option>
+                    <option value="archer queen">Archer Queen</option>
+                    <option value="archer">Archer</option>
+                    <option value="bandit">Bandit</option>
+                    <option value="barbarian">Barbarian</option>
+                    <option value="bomber">Bomber</option>
+                    <option value="dart goblin">Dart Goblin</option>
+                    <option value="executioner">Executioner</option>
+                    <option value="giant skeleton">Giant Skeleton</option>
+                    <option value="goblin machine">Goblin Machine</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="golden knight">Golden Knight</option>
+                    <option value="knight">Knight</option>
+                    <option value="mega knight">Mega Knight</option>
+                    <option value="pekka">P.E.K.K.A.</option>
+                    <option value="prince">Prince</option>
+                    <option value="princess">Princess</option>
+                    <option value="royal ghost">Royal Ghost</option>
+                    <option value="skeleton king">Skeleton King</option>
+                    <option value="spear goblin">Spear Goblin</option>
+                    <option value="valkyrie">Valkyrie</option>
+                </select>
+                <select name="card6" id="card6">
+                    <option value="none" selected>Select a card</option>
+                    <option value="archer queen">Archer Queen</option>
+                    <option value="archer">Archer</option>
+                    <option value="bandit">Bandit</option>
+                    <option value="barbarian">Barbarian</option>
+                    <option value="bomber">Bomber</option>
+                    <option value="dart goblin">Dart Goblin</option>
+                    <option value="executioner">Executioner</option>
+                    <option value="giant skeleton">Giant Skeleton</option>
+                    <option value="goblin machine">Goblin Machine</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="golden knight">Golden Knight</option>
+                    <option value="knight">Knight</option>
+                    <option value="mega knight">Mega Knight</option>
+                    <option value="pekka">P.E.K.K.A.</option>
+                    <option value="prince">Prince</option>
+                    <option value="princess">Princess</option>
+                    <option value="royal ghost">Royal Ghost</option>
+                    <option value="skeleton king">Skeleton King</option>
+                    <option value="spear goblin">Spear Goblin</option>
+                    <option value="valkyrie">Valkyrie</option>
+                </select>
+            </div>
+            
+            <div>
+                Select dummy traits:
+                <select name="dummyTrait1" id="dummyTrait1">
+                    <option value="none" selected>Select a trait</option>
+                    <option value="ace">Ace</option>
+                    <option value="assassin">Assassin</option>
+                    <option value="avenger">Avenger</option>
+                    <option value="brawler">Brawler</option>
+                    <option value="clan">Clan</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="juggernaut">Juggernaut</option>
+                    <option value="noble">Noble</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="thrower">Thrower</option>
+                    <option value="undead">Undead</option>
+                </select>
+                <select name="dummyTrait2" id="dummyTrait2">
+                    <option value="none" selected>Select a trait</option>
+                    <option value="ace">Ace</option>
+                    <option value="assassin">Assassin</option>
+                    <option value="avenger">Avenger</option>
+                    <option value="brawler">Brawler</option>
+                    <option value="clan">Clan</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="juggernaut">Juggernaut</option>
+                    <option value="noble">Noble</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="thrower">Thrower</option>
+                    <option value="undead">Undead</option>
+                </select>
+            </div>
+            
+            <div>
+                <button id="searchButton">Search for decks</button>
+            </div>
+        </div>
+
+        <div id="deckDisplay">
+        </div>
+
+        <script>
+            class Card{
+                constructor(name, traits, elixir, hasAbility, position, image){
+                    this.name = name;
+                    this.traits = traits;
+                    this.elixir = elixir;
+                    this.hasAbility = hasAbility;
+                    this.position = position;
+                    this.image = image;
+                }
+
+                toString(){
+                    return `<Card {${this.name}, ${this.traits}, ${this.elixir} elixir}>`
+                }
+            }
+
+            class Deck{
+                constructor(cards){
+                    this.cards = cards;
+                }
+
+                getCardNames(){
+                    let names = [];
+                    for (const c of this.cards){
+                        names.push(c.name);
+                    }
+                    return names;
+                }
+
+                getElixirCost(){
+                    let elixirCost = 0;
+                    for (const c of this.cards){
+                        elixirCost += c.elixir;
+                    }
+                    return elixirCost;
+                }
+
+                getTraits(){
+                    let currentTraits = {};
+                    for (const c of this.cards){
+                        for (const t of c.traits){
+                            if (t in currentTraits){
+                                currentTraits[t] += 1;
+                            } else {
+                                currentTraits[t] = 1;
+                            }
+                        }
+                    }
+                    return currentTraits;
+                }
+
+                getActivatedTraits(){
+                    let activeTraits = {};
+                    let currentTraits = this.getTraits();
+                    for (const t in currentTraits){
+                        if(traits[t]["min"] <= currentTraits[t]){
+                            activeTraits[t] = currentTraits[t];
+                        }
+                    }
+                    return activeTraits;
+                }
+
+                getLevel2Traits(){
+                    let level2Traits = {};
+                    let activeTraits = this.getActivatedTraits();
+                    for (const t in activeTraits){
+                        if(traits[t]["max"] <= activeTraits[t]){
+                            level2Traits[t] = activeTraits[t];
+                        }
+                    }
+                    return level2Traits;
+                }
+
+                getPositions(){
+                    let positions = {"front":0,"back":0};
+                    for (const c of this.cards){
+                        positions[c.position] += 1;
+                    }
+                    return positions;
+                }
+                
+                getAbilities(){
+                    let abilities = 0;
+                    for (const c of this.cards){
+                        if(c.hasAbility){
+                            abilities++;
+                        }
+                    }
+                    return abilities;
+                }
+
+                toString(){
+                    return `<Deck {${this.cards}}>`;
+                }
+            }
+
+            // card definitions
+            let archer = new Card("archer", ["clan", "ranger"], 2, false, "back", "images/cards/ArchersCard.webp");
+            let bandit = new Card("bandit", ["ace", "avenger"], 4, true, "front", "images/cards/BanditCard.webp");
+            let bomber = new Card("bomber", ["undead", "thrower"], 2, false, "back", "images/cards/BomberCard.webp");
+            let barbarian = new Card("barbarian", ["clan", "brawler"], 2, false, "front", "images/cards/BarbariansCard.webp");
+            let knight = new Card("knight", ["noble", "juggernaut"], 2, false, "front", "images/cards/KnightCard.webp");
+            let goldenKnight = new Card("golden knight", ["noble", "assassin"], 5, true, "front", "images/cards/GoldenKnightCard.webp");
+            let dartGoblin = new Card("dart goblin", ["goblin", "ranger"], 3, false, "back", "images/cards/DartGoblinCard.webp");
+            let goblin = new Card("goblin", ["goblin", "assassin"], 2, false, "front", "images/cards/GoblinsCard.webp");
+            let spearGoblin = new Card("spear goblin", ["goblin", "thrower"], 2, false, "back", "images/cards/SpearGoblinsCard.webp");
+            let giantSkeleton = new Card("giant skeleton", ["undead", "brawler"], 3, true, "front", "images/cards/GiantSkeletonCard.webp");
+            let royalGhost = new Card("royal ghost", ["undead", "assassin"], 4, true, "front", "images/cards/RoyalGhostCard.webp");
+            let megaKnight = new Card("mega knight", ["ace", "brawler"], 4, true, "front", "images/cards/MegaKnightCard.webp");
+            let goblinMachine = new Card("goblin machine", ["goblin", "juggernaut"], 4, true, "front", "images/cards/GoblinMachineCard.webp");
+            let pekka = new Card("pekka", ["ace", "juggernaut"], 3, false, "front", "images/cards/PEKKACard.webp");
+            let princess = new Card("princess", ["noble", "ranger"], 4, false, "back", "images/cards/PrincessCard.webp");
+            let prince = new Card("prince", ["noble", "brawler"], 3, true, "front", "images/cards/PrinceCard.webp");
+            let archerQueen = new Card("archer queen", ["clan", "avenger"], 5, true, "back", "images/cards/ArcherQueenCard.webp");
+            let skeletonKing = new Card("skeleton king", ["undead", "juggernaut"], 5, true, "front", "images/cards/SkeletonKingCard.webp");
+            let valkyrie = new Card("valkyrie", ["clan", "avenger"], 3, false, "front", "images/cards/ValkyrieCard.webp");
+            let executioner = new Card("executioner", ["ace", "thrower"], 3, false, "back", "images/cards/ExecutionerCard.webp");
+
+            // game definitions
+            let troops = [archer, bandit, bomber, barbarian, knight, goldenKnight, dartGoblin, goblin, spearGoblin, giantSkeleton, royalGhost, megaKnight, goblinMachine, pekka, princess, prince, archerQueen, skeletonKing, valkyrie, executioner];
+            let numberOfCardsInDeck = 6;
+            let traits = {"ace":{"min":2,"max":4,"image":"images/traits/AceTrait.webp"},
+                          "brawler":{"min":2,"max":4,"image":"images/traits/BrawlerTrait.webp"},
+                          "clan":{"min":2,"max":4,"image":"images/traits/ClanTrait.webp"},
+                          "goblin":{"min":2,"max":4,"image":"images/traits/GoblinTrait.webp"},
+                          "juggernaut":{"min":2,"max":4,"image":"images/traits/JuggernautTrait.webp"},
+                          "undead":{"min":2,"max":4,"image":"images/traits/UndeadTrait.webp"},
+                          "noble":{"min":2,"max":4,"image":"images/traits/NobleTrait.webp"},
+                          "assassin":{"min":3,"max":3,"image":"images/traits/AssassinTrait.webp"},
+                          "ranger":{"min":3,"max":3,"image":"images/traits/RangerTrait.webp"},
+                          "thrower":{"min":3,"max":3,"image":"images/traits/ThrowerTrait.webp"},
+                          "avenger":{"min":3,"max":3,"image":"images/traits/AvengerTrait.webp"}};
+            
+            function generatePermutations(){
+                let counter = 0;
+                for (let a = 0; a < troops.length - (numberOfCardsInDeck-1); a++){
+                    for (let b = (a+1); b < troops.length - (numberOfCardsInDeck-2); b++){
+                        for (let c = (b+1); c < troops.length - (numberOfCardsInDeck-3); c++){
+                            for (let d = (c+1); d < troops.length - (numberOfCardsInDeck-4); d++){
+                                for (let e = (d+1); e < troops.length - (numberOfCardsInDeck-5); e++){
+                                    for (let f = (e+1); f < troops.length; f++){
+                                        counter++;
+                                        let currentDeck = new Deck([troops[a],troops[b],troops[c],troops[d],troops[e],troops[f]]);
+                                        
+                                        analyzePermutation(currentDeck);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                                        
+                console.log(`Successfully generated ${counter} decks`);
+            }
+
+            //// Elixir
+            // highestElixirCost = 2
+            
+            //// Traits
+            // mostTraitsNum = 11
+            const mostActiveTraitsNum = 5 // 216 decks with 5 active traits
+            const mostLevel2TraitsNum = 2 // 31 decks with 2 level 2 traits
+            let traitNumberCount = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0};
+            let level2TraitNumberCount = {0:0, 1:0, 2:0};
+            let allDecks = [];
+            let superDecks = [];
+        
+            function analyzePermutation(d){
+                let currentActivatedTraits = d.getActivatedTraits();
+                let currentLevel2Traits = d.getLevel2Traits();
+                let currentNumActivatedTraits = Object.keys(currentActivatedTraits).length;
+                let currentNumLevel2Traits = Object.keys(currentLevel2Traits).length;
+
+                traitNumberCount[currentNumActivatedTraits] += 1;
+                level2TraitNumberCount[currentNumLevel2Traits] += 1;
+
+                if(currentNumActivatedTraits > 0){
+                    allDecks.push(d);
+                }
+            }
+
+            generatePermutations();
+
+            const deckDisplayDiv = document.getElementById("deckDisplay");
+
+            const searchButton = document.getElementById("searchButton");
+            searchButton.addEventListener("click",displayDecks);
+
+            // TODO
+            function generateDecks(){
+
+            }
+            // TODO
+            function analyzeDeck(d){
+                let currentActivatedTraits = d.getActivatedTraits();
+                let currentLevel2Traits = d.getLevel2Traits();
+
+                if(currentActivatedTraits.length > 0){
+                    allDecks.push(d);
+                }
+            }
+
+            let decksToDisplay = [];
+            const card1Input = document.getElementById("card1");
+            const card2Input = document.getElementById("card2");
+            const card3Input = document.getElementById("card3");
+            const card4Input = document.getElementById("card4");
+            const card5Input = document.getElementById("card5");
+            const card6Input = document.getElementById("card6");
+            const numTraitsInput = document.getElementById("numTraits");
+            const numLevel2TraitsInput = document.getElementById("numLevel2Traits");
+            const trait1Input = document.getElementById("trait1");
+            const trait2Input = document.getElementById("trait2");
+            const trait3Input = document.getElementById("trait3");
+            const trait4Input = document.getElementById("trait4");
+            const trait5Input = document.getElementById("trait5");
+            const maxTrait1Input = document.getElementById("maxTrait1");
+            const maxTrait2Input = document.getElementById("maxTrait2");
+            const numCardsInput = document.getElementById("numCards");
+            const dummyTrait1Input = document.getElementById("dummyTrait1");
+            const dummyTrait2Input = document.getElementById("dummyTrait2");
+
+            function displayDecks(){
+                decksToDisplay = [];
+                deckDisplayDiv.innerHTML = "";
+                card1V = card1Input.value;
+                card2V = card2Input.value;
+                card3V = card3Input.value;
+                card4V = card4Input.value;
+                card5V = card5Input.value;
+                card6V = card6Input.value;
+                numTraitsV = Number(numTraitsInput.value);
+                numLevel2TraitsV = Number(numLevel2TraitsInput.value);
+                trait1V = trait1Input.value;
+                trait2V = trait2Input.value;
+                trait3V = trait3Input.value;
+                trait4V = trait4Input.value;
+                trait5V = trait5Input.value;
+                maxTrait1V = maxTrait1Input.value;
+                maxTrait2V = maxTrait2Input.value;
+                numCardsV = Number(numCardsInput.value);
+                dummyTrait1V = dummyTrait1Input.value;
+                dummyTrait2V = dummyTrait2Input.value;
+                
+                if(allDecks[0].cards.length != numCardsV || (dummyTrait1V != "none" || dummyTrait2V != "none")){
+                    allDecks = [];
+                    for (let a = 0; a < troops.length - (numCardsV-1); a++){
+                        if(numCardsV > 1){
+                            for (let b = (a+1); b < troops.length - (numCardsV-2); b++){
+                                if(numCardsV > 2){
+                                    for (let c = (b+1); c < troops.length - (numCardsV-3); c++){
+                                        if(numCardsV > 3){
+                                            for (let d = (c+1); d < troops.length - (numCardsV-4); d++){
+                                                if(numCardsV > 4){
+                                                    for (let e = (d+1); e < troops.length - (numCardsV-5); e++){
+                                                        if(numCardsV > 5){
+                                                            for (let f = (e+1); f < troops.length - (numCardsV-6); f++){
+                                                                if(numCardsV > 6){
+                                                                    for (let g = (f+1); g < troops.length - (numCardsV-7); g++){
+                                                                        let nextTroops = [troops[a],troops[b],troops[c],troops[d],troops[e],troops[f],troops[g]];
+                                                                        if(dummyTrait1V != "none" || dummyTrait2V != "none"){
+                                                                            nextTroops.push(new Card("dummy", [dummyTrait1V,dummyTrait2V],0,false,"none",""));
+                                                                        }
+                                                                        let nextDeck = new Deck(nextTroops);
+                                                                        if(Object.keys(nextDeck.getActivatedTraits()).length > 0){
+                                                                            allDecks.push(nextDeck);
+                                                                        }
+                                                                    }
+                                                                } else {
+                                                                    let nextTroops = [troops[a],troops[b],troops[c],troops[d],troops[e],troops[f]];
+                                                                    if(dummyTrait1V != "none" || dummyTrait2V != "none"){
+                                                                        nextTroops.push(new Card("dummy", [dummyTrait1V,dummyTrait2V],0,false,"none",""));
+                                                                    }
+                                                                    let nextDeck = new Deck(nextTroops);
+                                                                    if(Object.keys(nextDeck.getActivatedTraits()).length > 0){
+                                                                        allDecks.push(nextDeck);
+                                                                    }
+                                                                }
+                                                            }
+                                                        } else {
+                                                            let nextTroops = [troops[a],troops[b],troops[c],troops[d],troops[e]];
+                                                            if(dummyTrait1V != "none" || dummyTrait2V != "none"){
+                                                                nextTroops.push(new Card("dummy", [dummyTrait1V,dummyTrait2V],0,false,"none",""));
+                                                            }
+                                                            let nextDeck = new Deck(nextTroops);
+                                                            if(Object.keys(nextDeck.getActivatedTraits()).length > 0){
+                                                                allDecks.push(nextDeck);
+                                                            }
+                                                        }
+                                                    }
+                                                } else {
+                                                    let nextTroops = [troops[a],troops[b],troops[c],troops[d]];
+                                                    if(dummyTrait1V != "none" || dummyTrait2V != "none"){
+                                                        nextTroops.push(new Card("dummy", [dummyTrait1V,dummyTrait2V],0,false,"none",""));
+                                                    }
+                                                    let nextDeck = new Deck(nextTroops);
+                                                    if(Object.keys(nextDeck.getActivatedTraits()).length > 0){
+                                                        allDecks.push(nextDeck);
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            let nextTroops = [troops[a],troops[b],troops[c]];
+                                            if(dummyTrait1V != "none" || dummyTrait2V != "none"){
+                                                nextTroops.push(new Card("dummy", [dummyTrait1V,dummyTrait2V],0,false,"none",""));
+                                            }
+                                            let nextDeck = new Deck(nextTroops);
+                                            if(Object.keys(nextDeck.getActivatedTraits()).length > 0){
+                                                allDecks.push(nextDeck);
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    let nextTroops = [troops[a],troops[b]];
+                                    if(dummyTrait1V != "none" || dummyTrait2V != "none"){
+                                        nextTroops.push(new Card("dummy", [dummyTrait1V,dummyTrait2V],0,false,"none",""));
+                                    }
+                                    let nextDeck = new Deck(nextTroops);
+                                    if(Object.keys(nextDeck.getActivatedTraits()).length > 0){
+                                        allDecks.push(nextDeck);
+                                    }
+                                }
+                            }
+                        } else {
+                            let nextTroops = [troops[a]];
+                            if(dummyTrait1V != "none" || dummyTrait2V != "none"){
+                                nextTroops.push(new Card("dummy", [dummyTrait1V,dummyTrait2V],0,false,"none",""));
+                            }
+                            let nextDeck = new Deck(nextTroops);
+                            if(Object.keys(nextDeck.getActivatedTraits()).length > 0){
+                                allDecks.push(nextDeck);
+                            }
+                        }
+                    }
+                }
+                
+                for (const deck of allDecks){
+                    if((card1V == "none" || deck.getCardNames().includes(card1V)) &&
+                       (card2V == "none" || deck.getCardNames().includes(card2V)) &&
+                       (card3V == "none" || deck.getCardNames().includes(card3V)) &&
+                       (card4V == "none" || deck.getCardNames().includes(card4V)) &&
+                       (card5V == "none" || deck.getCardNames().includes(card5V)) &&
+                       (card6V == "none" || deck.getCardNames().includes(card6V)) &&
+                       (numLevel2TraitsV == 0 || numLevel2TraitsV <= Object.keys(deck.getLevel2Traits()).length) &&
+                       (numTraitsV == 0 || numTraitsV <= Object.keys(deck.getActivatedTraits()).length) &&
+                       (trait1V == "none" || trait1V in deck.getActivatedTraits()) &&
+                       (trait2V == "none" || trait2V in deck.getActivatedTraits()) &&
+                       (trait3V == "none" || trait3V in deck.getActivatedTraits()) &&
+                       (trait4V == "none" || trait4V in deck.getActivatedTraits()) &&
+                       (trait5V == "none" || trait5V in deck.getActivatedTraits()) &&
+                       (maxTrait1V == "none" || maxTrait1V in deck.getLevel2Traits()) &&
+                       (maxTrait2V == "none" || maxTrait2V in deck.getLevel2Traits())){
+                        decksToDisplay.push(deck);
+                    }
+                }
+                
+                for (const deck of decksToDisplay.sort((a,b) => {
+                        aL2Traits = Object.keys(a.getLevel2Traits()).length;
+                        bL2Traits = Object.keys(b.getLevel2Traits()).length;
+                        aTraits = Object.keys(a.getActivatedTraits()).length - aL2Traits;
+                        bTraits = Object.keys(b.getActivatedTraits()).length - bL2Traits;
+                        if((2.1*aL2Traits)+aTraits != (2.1*bL2Traits)+bTraits){
+                            return ((2.1*bL2Traits)+bTraits) - ((2.1*aL2Traits)+aTraits);
+                        } else {
+                            return a.getElixirCost() - b.getElixirCost();
+                        }
+                    }).slice(0,20)){
+                    const deckDiv = document.createElement("div");
+                    for (const card of deck.cards){
+                        if(card.name != "dummy"){
+                            const cardDisplay = document.createElement("span");
+                            cardDisplay.id = card.name;
+                            const cardImage = document.createElement("img");
+                            cardImage.className = "cardImage";
+                            cardImage.src = card.image;
+                            cardDisplay.appendChild(cardImage);
+                            deckDiv.appendChild(cardDisplay);
+                        }
+                    }
+                    const maxedTraitPrefix = document.createElement("span");
+                    maxedTraitPrefix.innerText = "maxed:";
+                    deckDiv.appendChild(maxedTraitPrefix);
+                    for (const trait in deck.getLevel2Traits()){
+                        const traitDisplay = document.createElement("span");
+                        traitDisplay.id = trait;
+                        const traitImage = document.createElement("img");
+                        traitImage.className = "traitImage";
+                        traitImage.src = traits[trait]["image"];
+                        traitDisplay.appendChild(traitImage);
+                        deckDiv.appendChild(traitDisplay);
+                    }
+                    const traitDevider = document.createElement("span");
+                    traitDevider.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                    deckDiv.appendChild(traitDevider);
+                    const notMaxedTraitPrefix = document.createElement("span");
+                    notMaxedTraitPrefix.innerText = "active:";
+                    deckDiv.appendChild(notMaxedTraitPrefix);
+                    for (const trait in deck.getActivatedTraits()){
+                        if(!(trait in deck.getLevel2Traits())){
+                            const traitDisplay = document.createElement("span");
+                            traitDisplay.id = trait;
+                            const traitImage = document.createElement("img");
+                            traitImage.className = "traitImage";
+                            traitImage.src = traits[trait]["image"];
+                            traitDisplay.appendChild(traitImage);
+                            deckDiv.appendChild(traitDisplay);
+                        }
+                    }
+                    const elixirDevider = document.createElement("span");
+                    elixirDevider.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                    deckDiv.appendChild(elixirDevider);
+                    const elixirCostText = document.createElement("span");
+                    elixirCostText.innerText = `elixir cost: ${deck.getElixirCost()}`;
+                    deckDiv.appendChild(elixirCostText);
+                    
+                    const abilitiesDevider = document.createElement("span");
+                    abilitiesDevider.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                    deckDiv.appendChild(abilitiesDevider);
+                    const abilitiesText = document.createElement("span");
+                    abilitiesText.innerText = `special abilities: ${deck.getAbilities()}`;
+                    deckDiv.appendChild(abilitiesText);
+                    
+                    const positionsDevider = document.createElement("span");
+                    positionsDevider.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                    deckDiv.appendChild(positionsDevider);
+                    const positionsText = document.createElement("span");
+                    positionsV = deck.getPositions();
+                    positionsText.innerText = `front/back: ${positionsV.front}/${positionsV.back}`;
+                    deckDiv.appendChild(positionsText);
+
+                    deckDisplayDiv.appendChild(deckDiv);
+                }
+            }
+
+            console.log(allDecks.length);
+
+        </script>
+    </body>
+</html>
